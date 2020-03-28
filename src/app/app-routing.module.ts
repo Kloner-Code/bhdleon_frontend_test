@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
+import { AuthGuard } from './services/auth/auth.guard';
 import { TabsComponent } from './tabs/tabs.component';
 
 const routes: Routes = [
@@ -37,14 +38,10 @@ const routes: Routes = [
             path: 'contact',
             loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
           }
-          // {
-          //   path: 'branch',
-          //   loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule)
-          // }
         ]
       }
-    ]
-    // canActivate: [AuthGuard]
+    ],
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',

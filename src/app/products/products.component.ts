@@ -35,8 +35,8 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductsService, private cardService: CreditCardsService) { }
 
   ngOnInit() {
-    // this.fillAccountList();
-    // this.fillCreditCardList();
+    this.fillAccountList();
+    this.fillCreditCardList();
   }
 
   private async fillAccountList() {

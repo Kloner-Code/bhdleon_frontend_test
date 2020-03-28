@@ -47,10 +47,10 @@ export class AppLayoutComponent implements OnInit {
   constructor(private router: Router, private usersService: UsersService) { }
 
   ngOnInit() {
-    // this.usersService.getUserData().then((userData: UserResponse) => {
-    //   this.name = `${userData.name} ${userData.lastName}`;
-    //   this.image = userData.photo
-    // })
+    this.usersService.getUserData().then((userData: UserResponse) => {
+      this.name = `${userData.name} ${userData.lastName}`;
+      this.image = userData.photo
+    })
   }
 
   logout() {
