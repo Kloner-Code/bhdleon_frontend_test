@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../services/menu.service';
 import { ProductsResponse } from '../view-models/products-response';
 import { CardsResponse } from '../view-models/cards-response';
+import { ProductsService } from '../services/products/products.service';
+import { CreditCardsService } from '../services/credit-cards/credit-cards.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-products',
@@ -29,8 +32,18 @@ export class ProductsComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private productService: ProductsService, private cardService: CreditCardsService) { }
 
   ngOnInit() {
+    // this.fillAccountList();
+    // this.fillCreditCardList();
+  }
+
+  private async fillAccountList() {
+    this.accountList = await this.productService.getUserProducts();
+  }
+
+  private async fillCreditCardList() {
+    this.cardList = await this.cardService.getUserProducts();
   }
 }

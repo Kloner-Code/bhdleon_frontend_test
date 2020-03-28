@@ -8,9 +8,8 @@ import { MenuService } from '../services/menu.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(private menuService: MenuService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.menuService.setTitle('MainMenu')
   }
 }

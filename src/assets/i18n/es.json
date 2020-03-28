@@ -12,5 +12,9 @@
     "Logout": "Cerrar sesión",
     "Accounts": "Cuentas",
     "AvailableBalance": "Balance disponible",
-    "Cards": "Tarjetas"
+    "Cards": "Tarjetas",
+    "Contact": "Contacto",
+    "Branches": "Sucursales",
+    "ContactScreen": "Pantalla de contactos",
+    "BranchesScreen": "Pantalla de sucursales"
 }

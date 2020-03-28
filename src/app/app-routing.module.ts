@@ -32,7 +32,15 @@ const routes: Routes = [
           {
             path: 'settings',
             loadChildren: () => import('./user-settings/user-settings.module').then(m => m.UserSettingsModule)
+          },
+          {
+            path: 'contact',
+            loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
           }
+          // {
+          //   path: 'branch',
+          //   loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule)
+          // }
         ]
       }
     ]

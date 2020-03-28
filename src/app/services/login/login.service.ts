@@ -11,7 +11,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) {  }
 
-  public login(user: User) {
+  public login(user: User): Promise<UserProfile> {
     const url = `${environment.baseUrl}/sign_in`;
     return this.http.post<UserProfile>(url, user).toPromise();
   }

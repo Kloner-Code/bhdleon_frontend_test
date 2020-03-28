@@ -10,8 +10,8 @@ export class CreditCardsService {
 
   constructor(private http: HttpClient) { }
 
-  public getUserProducts() {
+  public getUserProducts(): Promise<CardsResponse[]> {
     const url = `${environment.baseUrl}/products/credit_cards`;
-    return this.http.get<CardsResponse>(url).toPromise();
+    return this.http.get<CardsResponse[]>(url).toPromise();
   }
 }

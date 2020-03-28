@@ -10,7 +10,7 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  public getUserData() {
+  public getUserData(): Promise<UserResponse> {
     const url = `${environment.baseUrl}/user_data`;
     return this.http.get<UserResponse>(url).toPromise();
   }

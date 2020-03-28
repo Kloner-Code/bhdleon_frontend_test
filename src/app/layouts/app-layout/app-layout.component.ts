@@ -14,23 +14,33 @@ export class AppLayoutComponent implements OnInit {
   public appPages = [
     {
       title: 'MyProducts',
-      url: './products',
+      url: '/products',
       icon: '../../../assets/images/icon_my_products_green.svg'
     },
     {
       title: 'Transactions',
-      url: './transactions',
+      url: '/transactions',
       icon: '../../../assets/images/icon_transactions_green.svg',
     },
     {
       title: 'Offers',
-      url: './ofeers',
+      url: '/offers',
       icon: '../../../assets/images/icon_offers_green.svg'
     },
     {
       title: 'Settings',
-      url: './settings',
+      url: '/settings',
       icon: '../../../assets/images/icon_config_green.svg'
+    },
+    {
+      title: 'Contact',
+      url: '/contact',
+      icon: '../../../assets/images/icon_contact.svg'
+    },
+    {
+      title: 'Branches',
+      url: '/contact/branches',
+      icon: '../../../assets/images/icon_branches.svg'
     }
   ];
 

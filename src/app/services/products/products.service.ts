@@ -10,8 +10,8 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  public getUserProducts() {
+  public getUserProducts(): Promise<ProductsResponse[]> {
     const url = `${environment.baseUrl}/products/accounts`;
-    return this.http.get<ProductsResponse>(url).toPromise();
+    return this.http.get<ProductsResponse[]>(url).toPromise();
   }
 }
