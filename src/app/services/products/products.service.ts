@@ -11,7 +11,7 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   public getUserProducts() {
-    const url = `${environment.baseUrl}/user_data`;
+    const url = `${environment.baseUrl}/products/accounts`;
     return this.http.get<ProductsResponse>(url).toPromise();
   }
 }

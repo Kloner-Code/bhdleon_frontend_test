@@ -1,5 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="#49B742"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <h1 class="m-auto main-title">{{'MyProducts' | translate}}</h1>
+    </ion-title>
+  </ion-toolbar>
+  <div class="header-line"></div>
+</ion-header>
+
 <div class="content">
-  <div class="sub-content d-flex align-items-center justify-content-center">
-    <p class="text-center justify-content-center">Mis Productos</p>
+  <div class="sub-content">
+    <ion-row class="justify-content-center">
+      <div class="product-title">
+        <h3 class="account-title mt-4">{{'Accounts' | translate}} (2)</h3>
+      </div>
+      <div class="account-card mt-3" *ngFor="let account of accountList">
+        <ion-row>
+          <img class="p-3" src="../../assets/images/icon_my_products_gray.svg" alt="">
+          <p class="mt-auto mb-auto ml-2 product-name">{{account.alias}} - {{account.number}}</p>
+        </ion-row>
+        <ion-row class="mt-2 amount-row">
+          <p class="ml-3 product-amount"><small>RD$</small> {{account.availableAmount}}</p>
+        </ion-row>
+        <ion-row>
+          <p class="ml-3 product-info">{{'AvailableBalance' | translate}}</p>
+        </ion-row>
+      </div>
+    </ion-row>
+
+    <ion-row class="justify-content-center">
+      <div class="product-title">
+        <h3 class="credit-card-title mt-4">{{'Cards' | translate}} (2)</h3>
+      </div>
+      <div class="credit-card-card mt-3" *ngFor="let card of cardList">
+        <ion-row>
+          <img class="p-3" src="../../assets/images/icon_my_products_gray.svg" alt="">
+          <p class="mt-auto mb-auto ml-2 product-name">{{card.alias}} - {{card.number}}</p>
+        </ion-row>
+        <ion-row class="mt-2 amount-row">
+          <p class="ml-3 product-amount"><small>RD$</small> {{card.availableAmountRD}}</p>
+        </ion-row>
+        <ion-row>
+          <p class="ml-3 product-info">{{'AvailableBalance' | translate}}</p>
+        </ion-row>
+      </div>
+    </ion-row>
   </div>
 </div>

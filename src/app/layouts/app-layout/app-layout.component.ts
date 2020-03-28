@@ -1,40 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from 'src/app/services/menu.service';
-import { Router, RouterEvent } from '@angular/router';
+import { Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users/users.service';
+import { UserResponse } from 'src/app/view-models/user-response';
 
 @Component({
   selector: 'app-app-layout',
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss'],
 })
-export class AppLayoutComponent {
-  title: string = ''
+export class AppLayoutComponent implements OnInit {
+  public name = 'Danyer Dominguez'
+  public image = 'https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png'
   public appPages = [
     {
-      title: 'Settings',
-      url: '',
-      icon: 'settings'
+      title: 'MyProducts',
+      url: './products',
+      icon: '../../../assets/images/icon_my_products_green.svg'
     },
     {
-      title: 'Logout',
-      url: '',
-      icon: 'md-exit'
+      title: 'Transactions',
+      url: './transactions',
+      icon: '../../../assets/images/icon_transactions_green.svg',
+    },
+    {
+      title: 'Offers',
+      url: './ofeers',
+      icon: '../../../assets/images/icon_offers_green.svg'
+    },
+    {
+      title: 'Settings',
+      url: './settings',
+      icon: '../../../assets/images/icon_config_green.svg'
     }
   ];
 
-  private titles = {
-    '/products': 'MyProducts',
-    '/transactions': 'Transactions',
-    '/offers': 'Offers',
-    '/settings': 'Settings'
+  constructor(private router: Router, private usersService: UsersService) { }
+
+  ngOnInit() {
+    // this.usersService.getUserData().then((userData: UserResponse) => {
+    //   this.name = `${userData.name} ${userData.lastName}`;
+    //   this.image = userData.photo
+    // })
   }
 
-  constructor(private router: Router) { 
-    this.router.events.subscribe((event: RouterEvent) => {
-      if(event && event.url){
-        this.title = this.titles[event.url];
-        console.log(this.title);
-      }
-    });
+  logout() {
+    this.router.navigate(['./login']);
   }
 }

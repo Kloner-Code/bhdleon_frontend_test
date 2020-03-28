@@ -1,15 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      <ion-row>
-        <img src="../../../assets/images/icon_menu.svg" alt="Menu">
-        <h1 class="m-auto title-style">{{title | translate}}</h1>
-      </ion-row>
-    </ion-title>
-  </ion-toolbar>
-  <div class="header-line"></div>
-</ion-header>
-<ion-content>
-  <ion-router-outlet class="content-bk"></ion-router-outlet>
-</ion-content>
-<app-tabs></app-tabs>
+<ion-split-pane>
+  <ion-menu type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          <ion-row>
+            <img class="menu-header-img" src={{image}} alt="'UserPhoto' | translate">
+            <h2 class="menu-header-title">{{name}}</h2>
+          </ion-row>
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div class="header-line"></div>
+    <ion-content>
+      <ion-list class="mt-3">
+        <ion-menu-toggle auto-hide="false" *ngFor="let page of appPages">
+          <ion-item [routerDirection]="'root'" [routerLink]="[page.url]">
+            <img src={{page.icon}}>
+            <ion-label class="ml-4">
+              {{page.title | translate}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer class="text-center">
+      <ion-toolbar>
+        <button (click)="logout()" class="btn logout-btn">{{'Logout' | translate | uppercase}}</button>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+  <ion-router-outlet class="content-bk" main></ion-router-outlet>
+</ion-split-pane>

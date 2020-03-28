@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MenuService } from '../services/menu.service';
-
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
@@ -9,10 +7,8 @@ import { MenuService } from '../services/menu.service';
 })
 export class OffersComponent implements OnInit {
 
-  constructor(private menuService: MenuService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.menuService.setTitle('Offers')
-  }
+  ngOnInit() {}
 
 }

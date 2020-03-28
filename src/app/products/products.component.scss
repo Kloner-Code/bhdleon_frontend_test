@@ -1,0 +1,50 @@
+.account-title {
+  color: #49b742;
+  float: left;
+  margin: auto;
+  font-size: 16px;
+}
+
+.credit-card-title {
+  color: #00477a;
+  float: left;
+  margin: auto;
+  font-size: 16px;
+}
+
+.product-title {
+  width: 90%;
+}
+
+.account-card {
+  height: auto;
+  width: 90%;
+  background-color: white;
+  border-left: 5px solid #49b742;
+}
+
+.credit-card-card {
+  height: auto;
+  width: 90%;
+  background-color: white;
+  border-left: 5px solid #00477a;
+}
+
+.product-name {
+  color: #666666;
+  font-size: 18px;
+}
+
+.product-amount {
+  color: #666666;
+  font-size: 24px;
+}
+
+.amount-row {
+  height: 30px;
+}
+
+.product-info {
+  color: #999999;
+  font-size: 12px;
+}

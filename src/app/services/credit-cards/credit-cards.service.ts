@@ -11,7 +11,7 @@ export class CreditCardsService {
   constructor(private http: HttpClient) { }
 
   public getUserProducts() {
-    const url = `${environment.baseUrl}/user_data`;
+    const url = `${environment.baseUrl}/products/credit_cards`;
     return this.http.get<CardsResponse>(url).toPromise();
   }
 }

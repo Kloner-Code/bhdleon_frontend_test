@@ -5,5 +5,4 @@ export interface CardsResponse {
     availableAmountUS: number;
     isInternational: boolean;
     productType: string;
-
 }

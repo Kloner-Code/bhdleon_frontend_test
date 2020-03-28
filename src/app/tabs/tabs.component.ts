@@ -13,7 +13,6 @@ export class TabsComponent implements OnInit {
     this.router.events.subscribe((event: RouterEvent) => {
       if(event && event.url){
         this.selectedPath = event.url;
-        console.log(this.selectedPath);
       }
     });
    }

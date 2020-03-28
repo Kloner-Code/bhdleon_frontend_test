@@ -8,5 +8,9 @@
     "Settings": "Configuración",
     "TransactionScreen": "Pantalla de transacciones",
     "SettingsScreen": "Pantalla de configuraciones",
-    "OffersScreen": "Pantalla de ofertas"
+    "OffersScreen": "Pantalla de ofertas",
+    "Logout": "Cerrar sesión",
+    "Accounts": "Cuentas",
+    "AvailableBalance": "Balance disponible",
+    "Cards": "Tarjetas"
 }

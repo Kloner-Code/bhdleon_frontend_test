@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MenuService } from '../services/menu.service';
-
 @Component({
   selector: 'app-user-settings',
   templateUrl: './user-settings.component.html',
@@ -9,9 +7,7 @@ import { MenuService } from '../services/menu.service';
 })
 export class UserSettingsComponent implements OnInit {
 
-  constructor(private menuService: MenuService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.menuService.setTitle('Settings')
-  }
+  ngOnInit() {}
 }
