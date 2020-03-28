@@ -1,0 +1,128 @@
+.backgroud {
+  background-image: url("../../assets/images/background.png");
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.card-style {
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  justify-content: space-between;
+}
+
+.icon-style {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-button {
+  background-color: #49b742;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  height: 44px;
+  font-weight: bold;
+}
+
+.align-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100vw;
+}
+
+.menu-icon {
+  display: block;
+  margin: 15px 0 0 5px;
+}
+
+.text-style{
+  color: #666666;
+  font-size: 12px;
+}
+
+.form-control {
+  height: 44px !important;
+  border-radius: 5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 22px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #CCCCCC99;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #49b742;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #49b742;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+::placeholder {
+  color: #CCCCCC;
+}

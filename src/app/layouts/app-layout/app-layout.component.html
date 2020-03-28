@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-row>
+        <img src="../../../assets/images/icon_menu.svg" alt="Menu">
+        <h1 class="m-auto title-style">{{title | translate}}</h1>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+  <div class="header-line"></div>
+</ion-header>
+<ion-content>
+  <!-- <ion-list>
+    <ion-menu-toggle auto-hide="false" *ngFor="let page of appPages">
+      <ion-item [routerDirection]="'root'" [routerLink]="[page.url]">
+        <ion-icon slot="start" [name]="page.icon"></ion-icon>
+        <ion-label>
+          {{page.title | translate}}
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list> -->
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>
+<app-tabs></app-tabs>
