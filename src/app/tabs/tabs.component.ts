@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -6,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs.component.scss'],
 })
 export class TabsComponent implements OnInit {
+  selectedPath: string = '';
 
-  constructor() { }
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: RouterEvent) => {
+      if(event && event.url){
+        this.selectedPath = event.url;
+        console.log(this.selectedPath);
+      }
+    });
+   }
 
   ngOnInit() {}
 

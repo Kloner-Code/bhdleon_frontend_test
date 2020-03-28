@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu.service';
+import { Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-app-layout',
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss'],
 })
-export class AppLayoutComponent implements OnInit {
+export class AppLayoutComponent {
   title: string = ''
   public appPages = [
     {
@@ -21,11 +22,19 @@ export class AppLayoutComponent implements OnInit {
     }
   ];
 
-  constructor(private menuService: MenuService) { }
+  private titles = {
+    '/products': 'MyProducts',
+    '/transactions': 'Transactions',
+    '/offers': 'Offers',
+    '/settings': 'Settings'
+  }
 
-  ngOnInit() {
-    this.menuService.menuTitle.subscribe(currentTitle => {
-      this.title = currentTitle;
-    })
+  constructor(private router: Router) { 
+    this.router.events.subscribe((event: RouterEvent) => {
+      if(event && event.url){
+        this.title = this.titles[event.url];
+        console.log(this.title);
+      }
+    });
   }
 }

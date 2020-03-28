@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     // }).catch((error: HttpErrorResponse) => {
     //   this.alertService.showMessage(error.error.message);
     // });
-    this.router.navigate(['./home']);
+    this.router.navigate(['./products']);
   }
 
   buildForm() {

@@ -2,5 +2,11 @@
     "Login": "Iniciar Sesión",
     "RememberUser": "Recuerda mi usuario",
     "MainMenu": "Menu Principal",
-    "MyProducts": "Mis Productos"
+    "MyProducts": "Mis Productos",
+    "Transactions": "Transacciones",
+    "Offers": "Ofertas",
+    "Settings": "Configuración",
+    "TransactionScreen": "Pantalla de transacciones",
+    "SettingsScreen": "Pantalla de configuraciones",
+    "OffersScreen": "Pantalla de ofertas"
 }

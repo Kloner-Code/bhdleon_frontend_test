@@ -1,23 +1,41 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="products">
-      <ion-icon name="archive"></ion-icon>
-      <ion-label>Mis Productos</ion-label>
+
+    <ion-tab-button [routerLink]="['/products']">
+      <ng-container *ngIf="selectedPath.includes('products'); else activeProduct">
+        <img src="../../assets/images/icon_my_products_green.svg" alt="">
+      </ng-container>
+      <ng-template #activeProduct>
+        <img src="../../assets/images/icon_my_products_gray.svg" alt="">
+      </ng-template>
     </ion-tab-button>
 
-    <ion-tab-button tab="">
-      <ion-icon name="build"></ion-icon>
-      <ion-label>Transacciones</ion-label>
+    <ion-tab-button [routerLink]="['/transactions']">
+      <ng-container *ngIf="selectedPath.includes('transactions'); else activeTransactions">
+        <img src="../../assets/images/icon_transactions_green.svg" alt="">
+      </ng-container>
+      <ng-template #activeTransactions>
+        <img src="../../assets/images/icon_transactions_gray.svg" alt="">
+      </ng-template>
     </ion-tab-button>
 
-    <ion-tab-button tab="sales">
-      <ion-icon name="cart"></ion-icon>
-      <ion-label>Ofertas</ion-label>
+    <ion-tab-button [routerLink]="['/offers']">
+      <ng-container *ngIf="selectedPath.includes('offers'); else activeOffers">
+        <img src="../../assets/images/icon_offers_green.svg" alt="">
+      </ng-container>
+      <ng-template #activeOffers>
+        <img src="../../assets/images/icon_offers_gray.svg" alt="">
+      </ng-template>
     </ion-tab-button>
 
-    <ion-tab-button tab="sales">
-      <ion-icon name="cart"></ion-icon>
-      <ion-label>Configuración</ion-label>
+    <ion-tab-button [routerLink]="['/settings']">
+      <ng-container *ngIf="selectedPath.includes('settings'); else activeSettings">
+        <img src="../../assets/images/icon_config_green.svg" alt="">
+      </ng-container>
+      <ng-template #activeSettings>
+        <img src="../../assets/images/icon_config_gray.svg" alt="">
+      </ng-template>
     </ion-tab-button>
+
   </ion-tab-bar>
 </ion-tabs>
