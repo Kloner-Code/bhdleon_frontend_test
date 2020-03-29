@@ -11,9 +11,9 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let token: string;
         const profile = this.authService.getUserProfile();
-
+    
         if (profile) {
-            token = profile.access_token;
+            token = profile;
         }
 
         if (!request.headers.has('Authorization') && token) {

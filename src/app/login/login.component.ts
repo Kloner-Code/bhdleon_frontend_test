@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   buildForm() {
     const regExp = '^([A-z0-9]){4,}$';
     this.loginForm = this.formBuilder.group({
-      email: [null, Validators.compose([Validators.required, Validators.pattern(environment.idRegex)])],
+      userId: [null, Validators.compose([Validators.required, Validators.pattern(environment.idRegex)])],
       password: [null, Validators.compose([Validators.required, Validators.pattern(regExp)])]
     });
   }

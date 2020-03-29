@@ -28,7 +28,7 @@ export class AuthService {
     return this.jwtHelperService.isTokenExpired(this.getUserProfile().access_token);
   }
 
-  getUserProfile(): UserProfile {
-    return JSON.parse(localStorage.getItem(this.tokenKey)) as UserProfile;
+  getUserProfile() {
+    return JSON.parse(localStorage.getItem(this.tokenKey));
   }
 }

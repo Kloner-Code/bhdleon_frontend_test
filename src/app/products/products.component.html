@@ -19,7 +19,7 @@
       <div class="account-card mt-3" *ngFor="let account of accountList">
         <ion-row>
           <img class="p-3" src="../../assets/images/icon_my_products_gray.svg" alt="">
-          <p class="mt-auto mb-auto ml-2 product-name">{{account.alias}} - {{account.number}}</p>
+          <p class="mt-auto mb-auto ml-2 product-name">{{account.alias}} - {{account.number.substr(-4)}}</p>
         </ion-row>
         <ion-row class="mt-2 amount-row">
           <p class="ml-3 product-amount"><small>RD$</small> {{account.availableAmount}}</p>
@@ -30,14 +30,14 @@
       </div>
     </ion-row>
 
-    <ion-row class="justify-content-center">
+    <ion-row class="justify-content-center mb-5">
       <div class="product-title">
         <h3 class="credit-card-title mt-4">{{'Cards' | translate}} (2)</h3>
       </div>
       <div class="credit-card-card mt-3" *ngFor="let card of cardList">
         <ion-row>
           <img class="p-3" src="../../assets/images/icon_credit_card_gray.svg" alt="">
-          <p class="mt-auto mb-auto ml-2 product-name">{{card.alias}} - {{card.number}}</p>
+          <p class="mt-auto mb-auto ml-2 product-name">{{card.alias}} - {{card.number.substr(-4)}}</p>
         </ion-row>
         <ion-row class="mt-2 amount-row">
           <p class="ml-3 product-amount"><small>RD$</small> {{card.availableAmountRD}}</p>
